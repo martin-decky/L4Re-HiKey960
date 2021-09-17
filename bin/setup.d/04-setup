@@ -45,6 +45,7 @@ write_config()
            CONF_DO_ARM_IMX6UL_PL2 \
            CONF_DO_ARM64 \
            CONF_DO_ARM64_VIRT_EL2 \
+           CONF_DO_ARM64_HIKEY960 \
            CONF_DO_ARM64_RCAR3 \
            CONF_DO_ARM64_RPI3 \
            CONF_DO_ARM64_RPI4 \
@@ -98,6 +99,7 @@ do_config()
     CONF_DO_ARM_IMX6UL_PL1=1
     CONF_DO_ARM_IMX6UL_PL2=1
     CONF_DO_ARM64_VIRT_EL2=1
+    CONF_DO_ARM64_HIKEY960=1
     CONF_DO_ARM64_RCAR3=1
     CONF_DO_ARM64_RPI3=1
     CONF_DO_ARM64_RPI4=1
@@ -210,6 +212,7 @@ do_config()
 	--and-widget --begin 9 10 \
 	  --checklist "Select ARM Targets to build:" 11 60 4 \
 	   arm64-virt-el2  "QEMU Virt Platform"  on \
+	   arm64-hikey960  "HiKey960"            off \
 	   arm64-rpi3      "Raspberry Pi 3"      off \
 	   arm64-rpi4      "Raspberry Pi 4"      off \
 	   arm64-s32       "Renesas R-Car 3"     off \
@@ -224,6 +227,7 @@ do_config()
 	[ "${e#\"}" = "$e" ] && e="\"$e\""
 	case "$e" in
 	  \"arm64-virt-el2\") CONF_DO_ARM64_VIRT_EL2=1 ;;
+	  \"arm64-hikey960\") CONF_DO_ARM64_HIKEY960=1 ;;
 	  \"arm64-rcar3\")    CONF_DO_ARM64_RCAR3=1 ;;
 	  \"arm64-rpi3\")     CONF_DO_ARM64_RPI3=1 ;;
 	  \"arm64-rpi4\")     CONF_DO_ARM64_RPI4=1 ;;
@@ -600,6 +604,7 @@ do_setup()
   [ "$CONF_DO_ARM_IMX6UL_PL2" ] && fiasco_configs="$fiasco_configs arm-imx6ul-pl2"
 
   [ "$CONF_DO_ARM64_VIRT_EL2" ] && fiasco_configs="$fiasco_configs arm64-virt-el2"
+  [ "$CONF_DO_ARM64_HIKEY960" ] && fiasco_configs="$fiasco_configs arm64-hikey960"
   [ "$CONF_DO_ARM64_RCAR3" ] && fiasco_configs="$fiasco_configs arm64-rcar3"
   [ "$CONF_DO_ARM64_RPI3" ] && fiasco_configs="$fiasco_configs arm64-rpi3"
   [ "$CONF_DO_ARM64_RPI4" ] && fiasco_configs="$fiasco_configs arm64-rpi4"
@@ -616,6 +621,7 @@ do_setup()
   fiascodirs[ux-1]="ux"
   fiascodirs[amd64-4]="amd64"
   fiascodirs[arm64-virt-el2]="arm64-virt-el2"
+  fiascodirs[arm64-hikey960]="arm64-hikey960"
   fiascodirs[arm64-rcar3]="arm64-rcar3"
   fiascodirs[arm64-rpi3]="arm64-rpi3"
   fiascodirs[arm64-rpi4]="arm64-rpi4"
@@ -639,6 +645,7 @@ do_setup()
   fiascocrosscomp[ux-1]=$CROSS_COMPILE_X86_32
   fiascocrosscomp[amd64-4]=$CROSS_COMPILE_AMD64
   fiascocrosscomp[arm64-virt-el2]=$CROSS_COMPILE_ARM64
+  fiascocrosscomp[arm64-hikey960]=$CROSS_COMPILE_ARM64
   fiascocrosscomp[arm64-rcar3]=$CROSS_COMPILE_ARM64
   fiascocrosscomp[arm64-rpi3]=$CROSS_COMPILE_ARM64
   fiascocrosscomp[arm64-rpi4]=$CROSS_COMPILE_ARM64
@@ -883,6 +890,13 @@ EOF
       echo "ENTRY=hello-shared BOOTSTRAP_IMAGE_SUFFIX=arm_virt PT=arm_virt PATH_FIASCO=$(pwd)/obj/fiasco/arm64-virt-el2" >> $odir/.imagebuilds
       echo "ENTRY=vm-basic     BOOTSTRAP_IMAGE_SUFFIX=arm_virt PT=arm_virt PATH_FIASCO=$(pwd)/obj/fiasco/arm64-virt-el2" >> $odir/.imagebuilds
       echo "ENTRY=vm-multi     BOOTSTRAP_IMAGE_SUFFIX=arm_virt PT=arm_virt PATH_FIASCO=$(pwd)/obj/fiasco/arm64-virt-el2" >> $odir/.imagebuilds
+    fi
+
+    if [ "$CONF_DO_ARM64_HIKEY960" ]; then
+      echo "ENTRY=hello        BOOTSTRAP_IMAGE_SUFFIX=hikey960 PT=hikey960 PATH_FIASCO=$(pwd)/obj/fiasco/arm64-hikey960 BOOTSTRAP_DO_UEFI=y" >> $odir/.imagebuilds
+      echo "ENTRY=hello-shared BOOTSTRAP_IMAGE_SUFFIX=hikey960 PT=hikey960 PATH_FIASCO=$(pwd)/obj/fiasco/arm64-hikey960 BOOTSTRAP_DO_UEFI=y" >> $odir/.imagebuilds
+      echo "ENTRY=vm-basic     BOOTSTRAP_IMAGE_SUFFIX=hikey960 PT=hikey960 PATH_FIASCO=$(pwd)/obj/fiasco/arm64-hikey960 BOOTSTRAP_DO_UEFI=y" >> $odir/.imagebuilds
+      echo "ENTRY=vm-multi     BOOTSTRAP_IMAGE_SUFFIX=hikey960 PT=hikey960 PATH_FIASCO=$(pwd)/obj/fiasco/arm64-hikey960 BOOTSTRAP_DO_UEFI=y" >> $odir/.imagebuilds
     fi
 
     if [ "$CONF_DO_ARM64_RCAR3" ]; then
