@@ -765,7 +765,7 @@ startup(char const *cmdline)
   l4util_l4mod_info *mbi = plat->modules()->construct_mbi(_mod_addr);
   cmdline = nullptr;
 
-#if defined(ARCH_arm) || defined(ARCH_arm64)
+#if (defined(ARCH_arm) || defined(ARCH_arm64)) && !defined(GNU_EFI_USE_MS_ABI)
   // Ensure later stages do not overwrite the CPU boot-up code
     {
       extern char cpu_bootup_code_start[], cpu_bootup_code_end[];
