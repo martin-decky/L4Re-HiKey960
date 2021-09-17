@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['random_3712',['Random',['../structL4Re_1_1Random.html',1,'L4Re']]],
+  ['range_3713',['Range',['../structL4Re_1_1Rm_1_1Range.html',1,'L4Re::Rm']]],
+  ['raw_5fipc_3714',['Raw_ipc',['../structL4_1_1Typeid_1_1Raw__ipc.html',1,'L4::Typeid']]],
+  ['rcv_5fendpoint_3715',['Rcv_endpoint',['../classL4_1_1Rcv__endpoint.html',1,'L4']]],
+  ['ref_5fcap_3716',['Ref_cap',['../structL4Re_1_1Util_1_1Ref__cap.html',1,'L4Re::Util']]],
+  ['ref_5fdel_5fcap_3717',['Ref_del_cap',['../structL4Re_1_1Util_1_1Ref__del__cap.html',1,'L4Re::Util']]],
+  ['ref_5fobj_5flist_5fitem_3718',['Ref_obj_list_item',['../structcxx_1_1Ref__obj__list__item.html',1,'cxx']]],
+  ['ref_5fptr_3719',['Ref_ptr',['../classcxx_1_1Ref__ptr.html',1,'cxx']]],
+  ['ref_5fptr_3c_20l4re_3a_3avfs_3a_3afile_20_3e_3720',['Ref_ptr&lt; L4Re::Vfs::File &gt;',['../classcxx_1_1Ref__ptr.html',1,'cxx']]],
+  ['ref_5fptr_3c_20mount_5ftree_20_3e_3721',['Ref_ptr&lt; Mount_tree &gt;',['../classcxx_1_1Ref__ptr.html',1,'cxx']]],
+  ['registry_5fiface_3722',['Registry_iface',['../classL4_1_1Registry__iface.html',1,'L4']]],
+  ['registry_5fserver_3723',['Registry_server',['../classL4Re_1_1Util_1_1Registry__server.html',1,'L4Re::Util']]],
+  ['regular_5ffile_3724',['Regular_file',['../classL4Re_1_1Vfs_1_1Regular__file.html',1,'L4Re::Vfs']]],
+  ['request_5fprocessor_3725',['Request_processor',['../classL4virtio_1_1Svr_1_1Request__processor.html',1,'L4virtio::Svr']]],
+  ['ret_5farray_3726',['Ret_array',['../structL4_1_1Ipc_1_1Ret__array.html',1,'L4::Ipc']]],
+  ['rm_3727',['Rm',['../classL4Re_1_1Rm.html',1,'L4Re']]],
+  ['rpc_3728',['Rpc',['../structL4_1_1Typeid_1_1Detail_1_1__Rpcs_3_01OPCODE_00_01O_00_01Default__op_3_01R_01_4_01_4_1_1Rpc.html',1,'L4::Typeid::Detail::_Rpcs&lt; OPCODE, O, Default_op&lt; R &gt; &gt;::Rpc&lt; Y &gt;'],['../structL4_1_1Typeid_1_1Detail_1_1__Rpcs_3_01OPCODE_00_01O_00_01R_00_01X_8_8_8_01_4_1_1Rpc.html',1,'L4::Typeid::Detail::_Rpcs&lt; OPCODE, O, R, X... &gt;::Rpc&lt; Y &gt;']]],
+  ['rpc_5fnocode_3729',['Rpc_nocode',['../structL4_1_1Typeid_1_1Rpc__nocode.html',1,'L4::Typeid']]],
+  ['rpcs_3730',['Rpcs',['../structL4_1_1Typeid_1_1Rpcs.html',1,'L4::Typeid']]],
+  ['rpcs_5fcode_3731',['Rpcs_code',['../structL4_1_1Typeid_1_1Rpcs__code.html',1,'L4::Typeid']]],
+  ['rpcs_5fend_3732',['Rpcs_end',['../structL4_1_1Typeid_1_1Detail_1_1Rpcs__end.html',1,'L4::Typeid::Detail']]],
+  ['rpcs_5fsys_3733',['Rpcs_sys',['../structL4_1_1Typeid_1_1Rpcs__sys.html',1,'L4::Typeid']]],
+  ['runtime_5ferror_3734',['Runtime_error',['../classL4_1_1Runtime__error.html',1,'L4']]]
+];
